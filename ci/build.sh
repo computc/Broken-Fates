@@ -19,6 +19,7 @@ xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' \
     -customBuildPath $BUILD_PATH \
     -customBuildOptions AcceptExternalModificationsToPlayer \
     -executeMethod BuildCommand.PerformBuild \
+    -manualLicenseFile ci/Unity_v2018.x.ulf \
     -logFile
 
 UNITY_EXIT_CODE=$?
