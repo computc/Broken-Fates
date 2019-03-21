@@ -19,7 +19,7 @@ xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' \
     -customBuildPath $BUILD_PATH \
     -customBuildOptions AcceptExternalModificationsToPlayer \
     -executeMethod BuildCommand.PerformBuild \
-    -manualLicenseFile Unity_v2018.x.ulf \
+    -manualLicenseFile Unity_v2018.x.ulf \ #May be removed if it doesn't fix the license problem
     -logFile
 
 UNITY_EXIT_CODE=$?
