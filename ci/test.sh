@@ -2,15 +2,15 @@
 
 set -x
 
-xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' \
-  /opt/Unity/Editor/Unity \
-    -projectPath $(pwd) \
-    -runTests \
-    -testPlatform $TEST_PLATFORM \
-    -testResults $(pwd)/$TEST_PLATFORM-results.xml \
-    -logFile \
-    -manualLicenseFile Unity_v2018.x.ulf \ #May be removed if it doesn't fix the license problem
-    -batchmode
+echo "Testng for $TEST_PLATFORM"
+
+${UNITY_EXECUTABLE:-xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity} \
+  -projectPath $(pwd) \
+  -runTests \
+  -testPlatform $TEST_PLATFORM \
+  -testResults $(pwd)/$TEST_PLATFORM-results.xml \
+  -logFile \
+  -batchmode
 
 UNITY_EXIT_CODE=$?
 
